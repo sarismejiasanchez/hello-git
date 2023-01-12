@@ -409,4 +409,45 @@ $ git tree
 * 686d47d Este es mi primer commit
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git ((401635f...))
-$
+$ git checkout main
+Switched to branch 'main'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 401635f (HEAD -> main) Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        00_commands.md
+        00_documentation.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Se añade el codigo y la documentacion de la clase 00"
+[main 16e1af6] Se añade el codigo y la documentacion de la clase 00
+ 2 files changed, 538 insertions(+)
+ create mode 100644 00_commands.md
+ create mode 100644 00_documentation.md
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 16e1af6 (HEAD -> main) Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
