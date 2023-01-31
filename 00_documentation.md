@@ -124,3 +124,12 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
     # * 82ee4cf Se actualiza el texto del print
     # * 4dcdad1 Este es mi segundo commit
     # * 686d47d Este es mi primer commit
+
+# Desaparecer todo lo que hemos hecho en adelante de un commit seleccionado
+    git reset --hard 4dcdad1
+
+# Log completo
+    git reflog
+    
+# Deshacer git reset --hard
+    git reset --hard 4dcdad1

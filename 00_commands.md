@@ -451,3 +451,153 @@ $ git tree
 * 82ee4cf Se actualiza el texto del print
 * 4dcdad1 Este es mi segundo commit
 * 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 4dcdad1 (HEAD -> main) Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git reflog
+4dcdad1 (HEAD -> main) HEAD@{0}: reset: moving to 4dcdad1
+4dcdad1 (HEAD -> main) HEAD@{1}: checkout: moving from ccfd892b3419028433c7a6af623b5bfee6b5be2f to main
+ccfd892 HEAD@{2}: checkout: moving from main to ccfd892
+4dcdad1 (HEAD -> main) HEAD@{3}: reset: moving to 4dcdad1
+4dcdad1 (HEAD -> main) HEAD@{4}: reset: moving to 4dcdad1
+4dcdad1 (HEAD -> main) HEAD@{5}: checkout: moving from ccfd892b3419028433c7a6af623b5bfee6b5be2f to main
+ccfd892 HEAD@{6}: checkout: moving from 4dcdad18b3aa6872bd877acaed84b38c437d3cba to ccfd892
+4dcdad1 (HEAD -> main) HEAD@{7}: reset: moving to 4dcdad1
+ccfd892 HEAD@{8}: checkout: moving from main to ccfd892
+4dcdad1 (HEAD -> main) HEAD@{9}: reset: moving to 4dcdad1
+4dcdad1 (HEAD -> main) HEAD@{10}: reset: moving to 4dcdad1
+ccfd892 HEAD@{11}: commit: Se actualizan los commands de la clase
+16e1af6 HEAD@{12}: commit: Se añade el codigo y la documentacion de la clase 00
+401635f HEAD@{13}: checkout: moving from 687e6e9c4003f949789fabfee6c28b5354b61969 to main
+687e6e9 HEAD@{14}: checkout: moving from main to 687e6e9
+401635f HEAD@{15}: checkout: moving from 687e6e9c4003f949789fabfee6c28b5354b61969 to main
+687e6e9 HEAD@{16}: checkout: moving from 401635f819e95a4eef91a4764de07d8211e8b352 to 687e6e9
+401635f HEAD@{17}: checkout: moving from 687e6e9c4003f949789fabfee6c28b5354b61969 to 401635f
+687e6e9 HEAD@{18}: commit: Se añade el codigo y la documentacion de la clase 00
+401635f HEAD@{19}: checkout: moving from 686d47d64da297908967465292ef9128664c547c to 401635f
+686d47d HEAD@{20}: checkout: moving from main to 686d47d64da297908967465292ef9128664c547c
+401635f HEAD@{21}: commit: Se añade el .gitignore
+82ee4cf HEAD@{22}: commit: Se actualiza el texto del print
+4dcdad1 (HEAD -> main) HEAD@{23}: commit: Este es mi segundo commit
+686d47d HEAD@{24}: commit (initial): Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git checkout ccfd892
+Note: switching to 'ccfd892'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ccfd892 Se actualizan los commands de la clase
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git ((ccfd892...))
+$ git checkout main
+Warning: you are leaving 4 commits behind, not connected to
+any of your branches:
+
+  ccfd892 Se actualizan los commands de la clase
+  16e1af6 Se añade el codigo y la documentacion de la clase 00
+  401635f Se añade el .gitignore
+  82ee4cf Se actualiza el texto del print
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> ccfd892
+
+Switched to branch 'main'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 4dcdad1 (HEAD -> main) Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git checkout ccfd892
+Note: switching to 'ccfd892'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ccfd892 Se actualizan los commands de la clase
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git ((ccfd892...))
+$ git tree
+* ccfd892 (HEAD) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 (main) Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git ((ccfd892...))
+$ git checkout main
+Warning: you are leaving 4 commits behind, not connected to
+any of your branches:
+
+  ccfd892 Se actualizan los commands de la clase
+  16e1af6 Se añade el codigo y la documentacion de la clase 00
+  401635f Se añade el .gitignore
+  82ee4cf Se actualiza el texto del print
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> ccfd892
+
+Switched to branch 'main'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git reset --hard ccfd892
+HEAD is now at ccfd892 Se actualizan los commands de la clase
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* ccfd892 (HEAD -> main) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tag clase_1
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* ccfd892 (HEAD -> main, tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
