@@ -601,3 +601,158 @@ $ git tree
 * 686d47d Este es mi primer commit
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tag
+clase_1
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git checkout tags/clase_1
+Note: switching to 'tags/clase_1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ccfd892 Se actualizan los commands de la clase
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git ((clase_1))
+$ git tree
+* 1ae9508 (main) Este es mi sexto commit
+* ccfd892 (HEAD, tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git ((clase_1))
+$ git checkout main
+Previous HEAD position was ccfd892 Se actualizan los commands de la clase
+Switched to branch 'main'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 1ae9508 (HEAD -> main) Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git branch login
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 1ae9508 (HEAD -> main, login) Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git switch login
+Switched to branch 'login'
+M       00_commands.md
+M       00_documentation.md
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git status
+On branch login
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_commands.md
+        modified:   00_documentation.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        login.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git add login.py
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git status
+On branch login
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   login.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_commands.md
+        modified:   00_documentation.md
+
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git commit -m "Login"
+[login ad3803f] Login
+ 1 file changed, 1 insertion(+)
+ create mode 100644 login.py
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git tree
+* ad3803f (HEAD -> login) Login
+* 1ae9508 (main) Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git switch main
+Switched to branch 'main'
+M       00_commands.md
+M       00_documentation.md
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   00_commands.md
+        modified:   00_documentation.md
+
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Se actualiza la documentacion y comandos de la clase 01"
+[main 70444f4] Se actualiza la documentacion y comandos de la clase 01
+ 2 files changed, 142 insertions(+), 3 deletions(-)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 70444f4 (HEAD -> main) Se actualiza la documentacion y comandos de la clase 01
+| * ad3803f (login) Login
+|/
+* 1ae9508 Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$
