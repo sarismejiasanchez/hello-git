@@ -719,3 +719,40 @@ $ git tree
 * 686d47d Este es mi primer commit
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git switch main
+Switched to branch 'main'
+M       00_commands.md
+M       00_documentation.md
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   00_commands.md
+        modified:   00_documentation.md
+
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Se actualiza la documentacion y comandos de la clase 01"
+[main 70444f4] Se actualiza la documentacion y comandos de la clase 01
+ 2 files changed, 142 insertions(+), 3 deletions(-)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 70444f4 (HEAD -> main) Se actualiza la documentacion y comandos de la clase 01
+| * ad3803f (login) Login
+|/
+* 1ae9508 Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$
