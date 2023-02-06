@@ -589,7 +589,7 @@ $ git tree
 * 686d47d Este es mi primer commit
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
-$ git tag clase_1
+$  clase_1git tag
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
 $ git tree
@@ -814,4 +814,254 @@ $ git stash drop
 Dropped refs/stash@{0} (267d92f4b7078a1b76c9bb06f9749fa2133f3906)
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git switch main
+Switched to branch 'main'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_commands.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Commands Clase 01"
+[main d83f162] Commands Clase 01
+ 1 file changed, 59 insertions(+)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* d83f162 (HEAD -> main) Commands Clase 01
+| * 9b1cc84 (login) Login v2
+| *   df2ee81 Correccion conflicto
+| |\
+| |/
+|/|
+* | 76e3379 Git 3 v3
+| * 16c53c8 Git 3 login
+| *   43e19bb Merge branch 'main' into login
+| |\
+| |/
+|/|
+* | de6a856 Git 3 v2
+* | 70444f4 Se actualiza la documentacion y comandos de la clase 01
+| * ad3803f Login
+|/
+* 1ae9508 Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git switch login
+Switched to branch 'login'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git status
+On branch login
+nothing to commit, working tree clean
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git switch main
+Switched to branch 'main'
+M       00_documentation.md
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Documentation Clase 01"
+[main 5449135] Documentation Clase 01
+ 1 file changed, 17 insertions(+), 17 deletions(-)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git diff login
+diff --git a/00_commands.md b/00_commands.md
+index dc13bcf..43ea4e5 100644
+--- a/00_commands.md
++++ b/00_commands.md
+@@ -754,5 +754,144 @@ $ git tree
+ * 4dcdad1 Este es mi segundo commit
+ * 686d47d Este es mi primer commit
+
++user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
++$ git switch main
++error: Your local changes to the following files would be overwritten by checkout:
++        login.py
++Please commit your changes or stash them before you switch branches.
++Aborting
++
++user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
++$ git stash
++Saved working directory and index state WIP on login: df2ee81 Correccion conflicto
++
++user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
++$ git stash list
++stash@{0}: WIP on login: df2ee81 Correccion conflicto
++
++user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
++$ git switch main
++Switched to branch 'main'
++
++user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
++$ git switch login
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git merge login
+Merge made by the 'ort' strategy.
+ hellogit3.py | 2 +-
+ login.py     | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 login.py
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git branch -d login
+Deleted branch login (was 9b1cc84).
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git branch
+* main
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git reflog
+ec3bbba (HEAD -> main) HEAD@{0}: merge login: Merge made by the 'ort' strategy.
+5449135 HEAD@{1}: commit: Documentation Clase 01
+d83f162 HEAD@{2}: checkout: moving from login to main
+9b1cc84 HEAD@{3}: checkout: moving from main to login
+d83f162 HEAD@{4}: commit: Commands Clase 01
+76e3379 HEAD@{5}: checkout: moving from login to main
+9b1cc84 HEAD@{6}: reset: moving to HEAD
+9b1cc84 HEAD@{7}: commit: Login v2
+df2ee81 HEAD@{8}: checkout: moving from main to login
+76e3379 HEAD@{9}: checkout: moving from login to main
+df2ee81 HEAD@{10}: reset: moving to HEAD
+df2ee81 HEAD@{11}: commit (merge): Correccion conflicto
+16c53c8 HEAD@{12}: checkout: moving from main to login
+76e3379 HEAD@{13}: commit: Git 3 v3
+de6a856 HEAD@{14}: checkout: moving from login to main
+16c53c8 HEAD@{15}: commit: Git 3 login
+43e19bb HEAD@{16}: merge main: Merge made by the 'ort' strategy.
+ad3803f HEAD@{17}: checkout: moving from main to login
+de6a856 HEAD@{18}: commit: Git 3 v2
+70444f4 HEAD@{19}: commit: Se actualiza la documentacion y comandos de la clase 01
+1ae9508 HEAD@{20}: checkout: moving from login to main
+ad3803f HEAD@{21}: commit: Login
+1ae9508 HEAD@{22}: checkout: moving from main to login
+1ae9508 HEAD@{23}: checkout: moving from login to main
+1ae9508 HEAD@{24}: checkout: moving from main to login
+1ae9508 HEAD@{25}: checkout: moving from ccfd892b3419028433c7a6af623b5bfee6b5be2f to main
+ccfd892 (tag: clase_1) HEAD@{26}: checkout: moving from main to tags/clase_1
+1ae9508 HEAD@{27}: commit: Este es mi sexto commit
+ccfd892 (tag: clase_1) HEAD@{28}: reset: moving to ccfd892
+4dcdad1 HEAD@{29}: checkout: moving from ccfd892b3419028433c7a6af623b5bfee6b5be2f to main
+ccfd892 (tag: clase_1) HEAD@{30}: checkout: moving from main to ccfd892
+4dcdad1 HEAD@{31}: checkout: moving from ccfd892b3419028433c7a6af623b5bfee6b5be2f to main
+ccfd892 (tag: clase_1) HEAD@{32}: checkout: moving from main to ccfd892
+4dcdad1 HEAD@{33}: reset: moving to 4dcdad1
+4dcdad1 HEAD@{34}: checkout: moving from ccfd892b3419028433c7a6af623b5bfee6b5be2f to main
+ccfd892 (tag: clase_1) HEAD@{35}: checkout: moving from main to ccfd892
+4dcdad1 HEAD@{36}: reset: moving to 4dcdad1
+4dcdad1 HEAD@{37}: reset: moving to 4dcdad1
+4dcdad1 HEAD@{38}: checkout: moving from ccfd892b3419028433c7a6af623b5bfee6b5be2f to main
+ccfd892 (tag: clase_1) HEAD@{39}: checkout: moving from 4dcdad18b3aa6872bd877acaed84b38c437d3cba to ccfd892
+4dcdad1 HEAD@{40}: reset: moving to 4dcdad1
+ccfd892 (tag: clase_1) HEAD@{41}: checkout: moving from main to ccfd892
+4dcdad1 HEAD@{42}: reset: moving to 4dcdad1
+4dcdad1 HEAD@{43}: reset: moving to 4dcdad1
+ccfd892 (tag: clase_1) HEAD@{44}: commit: Se actualizan los commands de la clase
+16e1af6 HEAD@{45}: commit: Se añade el codigo y la documentacion de la clase 00
+401635f HEAD@{46}: checkout: moving from 687e6e9c4003f949789fabfee6c28b5354b61969 to main
+687e6e9 HEAD@{47}: checkout: moving from main to 687e6e9
+401635f HEAD@{48}: checkout: moving from 687e6e9c4003f949789fabfee6c28b5354b61969 to main
+687e6e9 HEAD@{49}: checkout: moving from 401635f819e95a4eef91a4764de07d8211e8b352 to 687e6e9
+401635f HEAD@{50}: checkout: moving from 687e6e9c4003f949789fabfee6c28b5354b61969 to 401635f
+687e6e9 HEAD@{51}: commit: Se añade el codigo y la documentacion de la clase 00
+401635f HEAD@{52}: checkout: moving from 686d47d64da297908967465292ef9128664c547c to 401635f
+686d47d HEAD@{53}: checkout: moving from main to 686d47d64da297908967465292ef9128664c547c
+401635f HEAD@{54}: commit: Se añade el .gitignore
+82ee4cf HEAD@{55}: commit: Se actualiza el texto del print
+4dcdad1 HEAD@{56}: commit: Este es mi segundo commit
+686d47d HEAD@{57}: commit (initial): Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+*   ec3bbba (HEAD -> main) Merge branch 'login'
+|\
+| * 9b1cc84 Login v2
+| *   df2ee81 Correccion conflicto
+| |\
+| * | 16c53c8 Git 3 login
+| * |   43e19bb Merge branch 'main' into login
+| |\ \
+| * | | ad3803f Login
+* | | | 5449135 Documentation Clase 01
+* | | | d83f162 Commands Clase 01
+| |_|/
+|/| |
+* | | 76e3379 Git 3 v3
+| |/
+|/|
+* | de6a856 Git 3 v2
+* | 70444f4 Se actualiza la documentacion y comandos de la clase 01
+|/
+* 1ae9508 Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tag clase_2
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+*   ec3bbba (HEAD -> main, tag: clase_2) Merge branch 'login'
+|\
+| * 9b1cc84 Login v2
+| *   df2ee81 Correccion conflicto
+| |\
+| * | 16c53c8 Git 3 login
+| * |   43e19bb Merge branch 'main' into login
+| |\ \
+| * | | ad3803f Login
+* | | | 5449135 Documentation Clase 01
+* | | | d83f162 Commands Clase 01
+| |_|/
+|/| |
+* | | 76e3379 Git 3 v3
+| |/
+|/|
+* | de6a856 Git 3 v2
+* | 70444f4 Se actualiza la documentacion y comandos de la clase 01
+|/
+* 1ae9508 Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
 $

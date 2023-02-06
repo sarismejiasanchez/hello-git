@@ -154,3 +154,9 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
 
 # Eliminar stash
     git stash drop
+
+# Comparar ramas (revisar si tenemos conflictos)
+    git diff
+
+# Eliminar rama
+    git branch -d login
