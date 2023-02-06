@@ -754,5 +754,64 @@ $ git tree
 * 4dcdad1 Este es mi segundo commit
 * 686d47d Este es mi primer commit
 
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git switch main
+error: Your local changes to the following files would be overwritten by checkout:
+        login.py
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git stash
+Saved working directory and index state WIP on login: df2ee81 Correccion conflicto
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git stash list
+stash@{0}: WIP on login: df2ee81 Correccion conflicto
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git switch main
+Switched to branch 'main'
+
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git switch login
+Switched to branch 'login'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git stash list
+stash@{0}: WIP on login: df2ee81 Correccion conflicto
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git stash pop
+On branch login
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_commands.md
+        modified:   login.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (3a014ac921c1057561a8b462533f1b412483973b)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git add login.py
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git commit -m "Login v2"
+[login 9b1cc84] Login v2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git stash
+Saved working directory and index state WIP on login: 9b1cc84 Login v2
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git stash list
+stash@{0}: WIP on login: 9b1cc84 Login v2
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
+$ git stash drop
+Dropped refs/stash@{0} (267d92f4b7078a1b76c9bb06f9749fa2133f3906)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (login)
 $
