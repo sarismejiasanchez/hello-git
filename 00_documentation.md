@@ -130,27 +130,27 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
 
 # Log completo
     git reflog
-
+    
 # Deshacer git reset --hard
-    git reset --hard ccfd892
-    # git reset funciona tanto hacia atrás como hacia adelante
+    git reset --hard 4dcdad1
 
-# Tag, puntos importantes, guardar referencias
-# Los tag de las aplicaciones suelen ser las versiones
-    # Crear tag
-    git tag clase_1
-
-    # Consultar tags
-    git tag
-
-    # Moverse entre tags
-    git checkout tags/clase_1
-
-# Eliminar un commit
-    git revert
-
-# Crear una rama (banch)
+# Crear rama
     git branch login
 
 # Cambiar de rama
     git switch login
+
+# Combinar los cambios entre ramas
+    git merge main
+
+# Hacer commit en local, no afecta al arbol
+    git stash
+
+# Listar stash
+    git stash list
+
+# Traer lo que tengo en stash para continuar trabajando en ello
+    git stash pop
+
+# Eliminar stash
+    git stash drop
