@@ -170,3 +170,9 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
 
 # Publicar en repositorio remoto
     git push -u origin main
+
+# Descargar al local el historial de cambios (sin descargarse los cambios)
+    git fetch
+
+# Descargar el historial y tambien los cambios del repositorio remoto
+    git pull

@@ -1228,3 +1228,87 @@ Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
 To https://github.com/sarismejiasanchez/hello-git.git
    6f7d919..0d346ba  main -> main
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_documentation.md
+        modified:   hellogit.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add hellogit.py
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Hello GitHub"
+[main 4222942] Hello GitHub
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git push
+To https://github.com/sarismejiasanchez/hello-git.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/sarismejiasanchez/hello-git.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 660 bytes | 5.00 KiB/s, done.
+From https://github.com/sarismejiasanchez/hello-git
+   61f7768..1d20721  main       -> origin/main
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 4222942 (HEAD -> main) Hello GitHub
+| * 1d20721 (origin/main) Create README.md
+|/
+* 61f7768 Hello GitHub
+* bb4dfeb Se actualiza la documentacion y comandos de la clase 02
+* 0d346ba Se actualiza la documentacion y comandos de la clase 02
+* 6f7d919 Se actualiza la documentacion y comandos de la clase 01
+*   ec3bbba (tag: clase_2) Merge branch 'login'
+|\
+| * 9b1cc84 Login v2
+| *   df2ee81 Correccion conflicto
+| |\
+| * | 16c53c8 Git 3 login
+| * |   43e19bb Merge branch 'main' into login
+| |\ \
+| * | | ad3803f Login
+* | | | 5449135 Documentation Clase 01
+* | | | d83f162 Commands Clase 01
+| |_|/
+|/| |
+* | | 76e3379 Git 3 v3
+| |/
+|/|
+* | de6a856 Git 3 v2
+* | 70444f4 Se actualiza la documentacion y comandos de la clase 01
+|/
+* 1ae9508 Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git pull
+Merge made by the 'ort' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$
