@@ -1125,3 +1125,106 @@ Hi sarismejiasanchez! You've successfully authenticated, but GitHub does not pro
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
 $ ssh -T git@github.com
 Hi sarismejiasanchez! You've successfully authenticated, but GitHub does not provide shell access.
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git remote add origin https://github.com/sarismejiasanchez/hello-git.git
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git push -u origin main
+Enumerating objects: 61, done.
+Counting objects: 100% (61/61), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (49/49), done.
+Writing objects: 100% (61/61), 10.60 KiB | 319.00 KiB/s, done.
+Total 61 (delta 25), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (25/25), done.
+To https://github.com/sarismejiasanchez/hello-git.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_commands.md
+        modified:   00_documentation.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git tree
+* 6f7d919 (HEAD -> main, origin/main) Se actualiza la documentacion y comandos de la clase 01
+*   ec3bbba (tag: clase_2) Merge branch 'login'
+|\
+| * 9b1cc84 Login v2
+| *   df2ee81 Correccion conflicto
+| |\
+| * | 16c53c8 Git 3 login
+| * |   43e19bb Merge branch 'main' into login
+| |\ \
+| * | | ad3803f Login
+* | | | 5449135 Documentation Clase 01
+* | | | d83f162 Commands Clase 01
+| |_|/
+|/| |
+* | | 76e3379 Git 3 v3
+| |/
+|/|
+* | de6a856 Git 3 v2
+* | 70444f4 Se actualiza la documentacion y comandos de la clase 01
+|/
+* 1ae9508 Este es mi sexto commit
+* ccfd892 (tag: clase_1) Se actualizan los commands de la clase
+* 16e1af6 Se añade el codigo y la documentacion de la clase 00
+* 401635f Se añade el .gitignore
+* 82ee4cf Se actualiza el texto del print
+* 4dcdad1 Este es mi segundo commit
+* 686d47d Este es mi primer commit
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_commands.md
+        modified:   00_documentation.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "^C
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Se actualiza la documentacion y comandos de la clase 02" -m "Configuracion y sincronizacion con GitHub"
+[main 0d346ba] Se actualiza la documentacion y comandos de la clase 02
+ 2 files changed, 72 insertions(+), 2 deletions(-)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.42 KiB | 364.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/sarismejiasanchez/hello-git.git
+   6f7d919..0d346ba  main -> main
