@@ -160,3 +160,13 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
 
 # Eliminar rama
     git branch -d login
+
+# Autenticacion con GitHub
+    https://docs.github.com/es/authentication
+    https://docs.github.com/es/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys
+
+# Conectar a repositorio remoto
+    git remote add origin https://github.com/sarismejiasanchez/hello-git.git
+
+# Publicar en repositorio remoto
+    git push -u origin main

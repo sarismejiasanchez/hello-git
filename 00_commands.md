@@ -1064,4 +1064,64 @@ $ git tree
 * 686d47d Este es mi primer commit
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
-$
+$ ls -al ~/.ssh
+ls: cannot access '/c/Users/user/.ssh': No such file or directory
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ ssh-keygen -t ed25519 -C "sarismejiasanchez@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/user/.ssh/id_ed25519): id_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in id_rsa
+Your public key has been saved in id_rsa.pub
+The key fingerprint is:
+SHA256:nRV/7jZtrJ5GA2mHndTB93DGWgvL8RP6ZhYys1hPtRo sarismejiasanchez@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|            . .+.|
+|             =ooO|
+|            o=BBO|
+|         . o=E=X.|
+|        S o.oo@ +|
+|           . ooO.|
+|             .+o*|
+|              .=.|
+|             o+  |
++----[SHA256]-----+
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ eval "$(ssh-agent -s)"
+Agent pid 1860
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ ssh-add ~/.ssh/id_rsa
+/c/Users/user/.ssh/id_rsa: No such file or directory
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/user/.ssh/id_rsa (sarismejiasanchez@gmail.com)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ eval "$(ssh-agent -s)"
+Agent pid 1876
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/user/.ssh/id_rsa (sarismejiasanchez@gmail.com)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ clip < ~/.ssh/id_rsa.pub
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (140.82.113.4)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi sarismejiasanchez! You've successfully authenticated, but GitHub does not provide shell access.
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ ssh -T git@github.com
+Hi sarismejiasanchez! You've successfully authenticated, but GitHub does not provide shell access.
