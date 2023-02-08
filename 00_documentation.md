@@ -176,3 +176,13 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
 
 # Descargar el historial y tambien los cambios del repositorio remoto
     git pull
+
+# Clonar repositorio (SSH)
+    git clone git@github.com:sarismejiasanchez/hello-git.git
+
+# Flujo colaborativo
+    1. Realizar un fork del repositorio mouredev/hello-git
+    2. git clone git@github.com:sarismejiasanchez/hello-git-mouredev.git
+    3. Realizar los cambios sobre el repositorio clonado, push para sincronizar esos cambios con GitHub.
+    4. Enviar el cambio al repositorio original desde nuestro repositorio
+       Contribute - Open pull request

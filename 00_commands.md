@@ -1311,4 +1311,88 @@ Merge made by the 'ort' strategy.
  create mode 100644 README.md
 
 user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
-$
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   00_commands.md
+        modified:   00_documentation.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git add .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git commit -m "Se actualiza la documentacion y comandos de la clase 02" -m "Configuracion y sincronizacion con GitHub"
+[main 11fcf7c] Se actualiza la documentacion y comandos de la clase 02
+ 2 files changed, 91 insertions(+), 1 deletion(-)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git push
+Enumerating objects: 17, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 1.65 KiB | 337.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 3 local objects.
+To https://github.com/sarismejiasanchez/hello-git.git
+   1d20721..11fcf7c  main -> main
+
+user@SARISMEJIASANCHEZ MINGW64 ~ (main)
+$ git clone git@github.com:sarismejiasanchez/hello-git-mouredev.git
+Cloning into 'hello-git-mouredev'...
+remote: Enumerating objects: 505, done.
+remote: Counting objects: 100% (103/103), done.
+remote: Compressing objects: 100% (54/54), done.
+
+Receiving objects: 100% (505/505), 354.80 KiB | 1.10 MiB/s, done.
+Resolving deltas: 100% (278/278), done.
+
+user@SARISMEJIASANCHEZ MINGW64 ~ (main)
+$ cd hello-git-mouredev/
+
+user@SARISMEJIASANCHEZ MINGW64 ~/hello-git-mouredev (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+user@SARISMEJIASANCHEZ MINGW64 ~/hello-git-mouredev (main)
+$ git add hello.md
+
+user@SARISMEJIASANCHEZ MINGW64 ~/hello-git-mouredev (main)
+$ git commit -m "Añado mi nombre de usuario para saludar a la comunidad"
+[main c81668a] Añado mi nombre de usuario para saludar a la comunidad
+ 1 file changed, 1 insertion(+)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/hello-git-mouredev (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:sarismejiasanchez/hello-git-mouredev.git
+   89e1674..c81668a  main -> main
