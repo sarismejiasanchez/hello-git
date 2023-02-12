@@ -186,3 +186,11 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
     3. Realizar los cambios sobre el repositorio clonado, push para sincronizar esos cambios con GitHub.
     4. Enviar el cambio al repositorio original desde nuestro repositorio
        Contribute - Open pull request
+
+# Git Flow
+    git flow
+    git flow init
+    git flow feature start 2auth
+    git flow feature finish 2auth
+    git flow release start 1.0
+    git flow release finish '1.0'

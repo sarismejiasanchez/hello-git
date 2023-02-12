@@ -1396,3 +1396,131 @@ Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To github.com:sarismejiasanchez/hello-git-mouredev.git
    89e1674..c81668a  main -> main
+  
+user@SARISMEJIASANCHEZ MINGW64 ~ (main)
+$ cd 'Helo Git'
+bash: cd: Helo Git: No such file or directory
+
+user@SARISMEJIASANCHEZ MINGW64 ~ (main)
+$ cd 'Hello Git'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git flow
+usage: git flow <subcommand>
+
+Available subcommands are:
+   init      Initialize a new git repo with support for the branching model.
+   feature   Manage your feature branches.
+   bugfix    Manage your bugfix branches.
+   release   Manage your release branches.
+   hotfix    Manage your hotfix branches.
+   support   Manage your support branches.
+   version   Shows version information.
+   config    Manage your git-flow configuration.
+   log       Show log deviating from base branch.
+
+Try 'git flow <subcommand> help' for details.
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$ git flow init
+
+Which branch should be used for bringing forth production releases?
+   - main
+Branch name for production releases: [main]
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+Hooks and filters directory? [C:/Users/user/Hello Git/.git/hooks]
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (develop)
+$ git flow start feature 2auth
+usage: git flow <subcommand>
+
+Available subcommands are:
+   init      Initialize a new git repo with support for the branching model.
+   feature   Manage your feature branches.
+   bugfix    Manage your bugfix branches.
+   release   Manage your release branches.
+   hotfix    Manage your hotfix branches.
+   support   Manage your support branches.
+   version   Shows version information.
+   config    Manage your git-flow configuration.
+   log       Show log deviating from base branch.
+
+Try 'git flow <subcommand> help' for details.
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (develop)
+$ git flow feature start 2auth
+Switched to a new branch 'feature/2auth'
+
+Summary of actions:
+- A new branch 'feature/2auth' was created, based on 'develop'
+- You are now on branch 'feature/2auth'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish 2auth
+
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (feature/2auth)
+$ code .
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (feature/2auth)
+$ git status
+On branch feature/2auth
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        auth.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (feature/2auth)
+$ git add auth.py
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (feature/2auth)
+$ git flow feature finish 2auth
+Switched to branch 'develop'
+Updating fabcd2c..5165778
+Fast-forward
+ auth.py | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 auth.py
+Deleted branch feature/2auth (was 5165778).
+
+Summary of actions:
+- The feature branch 'feature/2auth' was merged into 'develop'
+- Feature branch 'feature/2auth' has been locally deleted
+- You are now on branch 'develop'
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (develop)
+$ git flow release start 1.0
+Switched to a new branch 'release/1.0'
+
+Summary of actions:
+- A new branch 'release/1.0' was created, based on 'develop'
+- You are now on branch 'release/1.0'
+
+Follow-up actions:
+- Bump the version number now!
+- Start committing last-minute fixes in preparing your release
+- When done, run:
+
+     git flow release finish '1.0'
+
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (release/1.0)
+$ git flow release finish 1.0
+Branches 'main' and 'origin/main' have diverged.
+Fatal: And branch 'main' may be fast-forwarded.
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (release/1.0)
+$
+
+user@SARISMEJIASANCHEZ MINGW64 ~/Hello Git (main)
+$
