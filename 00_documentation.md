@@ -194,3 +194,14 @@ Curso de GIT y GITHUB Desde Cero - MoureDev
     git flow feature finish 2auth
     git flow release start 1.0
     git flow release finish '1.0'
+
+# Cherry-pick
+    Es la posibilidad de irnos a un commit concreto y traerlo a la rama que nosotros queramos.
+
+    git cherry-pick 62fe386
+
+# Rebase
+    Traernos una rama a un punto concreto y modificar el historial de commits
+
+    git rebase [rama_origen] [rama_destino]
+    git rebase -i
